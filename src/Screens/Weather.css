@@ -7,8 +7,13 @@
 .left {
   text-align: center;
   width: 30%;
-  /* margin: 10%; */
+  border: 1px solid white;
+  padding-top: 200px;
 }
+
+/* .RangePicker {
+  border: 1px solid black;
+} */
 
 .right {
   /* margin: 10%; */
