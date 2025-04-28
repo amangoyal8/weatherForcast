@@ -20,6 +20,7 @@ function Weather() {
 
         const infoResponse = await axios.get(`https://ipinfo.io/${data.ip}/json`);
         setIpInfo(infoResponse.data);
+
       } catch (err) {
         console.error("Error fetching IP info: ", err);
       }
@@ -67,8 +68,8 @@ function Weather() {
       filteredWeather = sortedData.slice(todayIndex, todayIndex + 1);
     }
   } else if (currentPage < 0) {
-    const start = Math.max(todayIndex + currentPage * 3, 0);
-    const end = todayIndex;
+    const start = Math.max(todayIndex + (currentPage * 3), 0);
+    const end = Math.min(start + 3, todayIndex);
     filteredWeather = sortedData.slice(start, end);
   } else {
     const start = todayIndex + 1 + (currentPage - 1) * 3;
